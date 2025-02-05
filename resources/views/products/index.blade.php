@@ -10,7 +10,9 @@
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 text-gray-900">
 
+        @auth
           <a href="{{ route('products.create') }}" class="btn mb-3">Nuevo Producto</a>
+        @endauth
           <table class="table">
             <thead>
               <tr>
@@ -32,6 +34,7 @@
                 <td>{{ $product->stock }}</td>
                 <td>
                   <a href="{{ route('products.show', $product) }}" class="btn success">Ver</a>
+                  @auth
                   <form action="{{ route('products.destroy', $product) }}" method="post" style="display: inline;">
                     @csrf
                     @method("DELETE")
@@ -39,6 +42,7 @@
                   </form>
                   <a href="{{ route('products.edit', $product) }}" class="btn warning">Editar</a>
                 </td>
+                @endauth
               </tr>
               @endforeach
             </tbody>
