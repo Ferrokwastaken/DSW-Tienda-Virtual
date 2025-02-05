@@ -1,3 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components {
+  .btn {
+    @apply bg-blue-700 text-white font-bold py-2 px-4 rounded text-sm inline-block;
+  }
+
+  .btn.danger {
+    @apply bg-red-700;
+  }
+
+  .btn.warning {
+    @apply bg-yellow-700;
+  }
+
+  .btn.success {
+    @apply bg-green-700;
+  }
+
+  .table {
+    @apply w-full border-collapse;
+  }
+
+  .table th {
+    @apply bg-gray-200 text-gray-700 font-bold text-sm uppercase;
+  }
+
+  .table td {
+    @apply border-t py-2 px-4;
+  }
+
+  .table tr:nth-child(even) {
+    @apply bg-gray-100;
+  }
+
+  .form {
+    @apply w-full max-w-sm;
+  }
+
+  .form input {
+    @apply appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white;
+  }
+
+  .form label {
+    @apply block text-gray-700 text-sm font-bold mb-2;
+  }
+
+  .form textarea {
+    @apply appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white;
+  }
+}

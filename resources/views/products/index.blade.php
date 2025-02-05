@@ -9,9 +9,9 @@
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 text-gray-900">
-          <h1>Lista de productos</h1>
-          <a href="{{ route('products.create') }}" class="bg-orange-400 p-10 inline-block">Nuevo Producto</a>
-          <table>
+
+          <a href="{{ route('products.create') }}" class="btn mb-3">Nuevo Producto</a>
+          <table class="table">
             <thead>
               <tr>
                 <th>ID</th>
@@ -28,16 +28,16 @@
                 <td>{{ $product->id }}</td>
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->description }}</td>
-                <td>{{ number_format($product->price, 2) }}</td>
+                <td>{{ number_format($product->price, 2) }}€</td>
                 <td>{{ $product->stock }}</td>
                 <td>
-                  <a href="{{ route('products.show', $product) }}"><button>Ver</button></a>
+                  <a href="{{ route('products.show', $product) }}" class="btn success">Ver</a>
                   <form action="{{ route('products.destroy', $product) }}" method="post" style="display: inline;">
                     @csrf
                     @method("DELETE")
-                    <button type="submit">Eliminar</button>
+                    <button type="submit" class="btn danger">Eliminar</button>
                   </form>
-                  <a href="{{ route('products.edit', $product) }}"><button>Editar</button></a>
+                  <a href="{{ route('products.edit', $product) }}" class="btn warning">Editar</a>
                 </td>
               </tr>
               @endforeach
