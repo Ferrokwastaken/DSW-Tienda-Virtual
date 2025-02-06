@@ -19,7 +19,7 @@
   }
 
   .table {
-    @apply w-full border-collapse;
+    @apply w-full border-collapse text-center;
   }
 
   .table th {
